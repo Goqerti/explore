@@ -1,0 +1,250 @@
+/* ---- 1. QLOBAL DƏYİŞƏNLƏR VƏ RESET ---- */
+
+/* :root selektoru ilə bütün sənəd üçün istifadə edəcəyimiz CSS dəyişənlərini (variables) təyin edirik */
+:root {
+    --clr-primary-400: #0056b3; /* Əsas mavi rəng */
+    --clr-primary-500: #004494; /* Əsas mavi rəngin tünd çaları */
+    --clr-accent-400: #28a745;  /* Vurğu rəngi (yaşıl) */
+    --clr-accent-500: #218838;  /* Vurğu rənginin tünd çaları */
+    
+    --clr-neutral-100: #ffffff; /* Ağ rəng (səthlər üçün) */
+    --clr-neutral-200: #f4f4f4; /* Açıq boz (arxa fon) */
+    --clr-neutral-700: #333333; /* Tünd boz (əsas mətn) */
+    --clr-neutral-900: #1a1a1a; /* Çox tünd boz (başlıqlar) */
+
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    --spacing-xs: 0.5rem;  /* 8px */
+    --spacing-sm: 0.75rem; /* 12px */
+    --spacing-md: 1rem;    /* 16px */
+    --spacing-lg: 1.5rem;  /* 24px */
+    --spacing-xl: 2rem;    /* 32px */
+
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease-in-out;
+}
+
+/* Müasir CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--clr-neutral-200);
+    color: var(--clr-neutral-700);
+    margin: 0;
+    padding: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+/* Ümumi konteyner stilləri */
+header,
+nav,
+main,
+footer,
+#upload-section {
+    max-width: 900px;
+    margin-inline: auto; /* 'margin: 0 auto' üçün müasir alternativ */
+    margin-block-end: var(--spacing-lg);
+}
+
+
+/* ---- 2. KOMPONENT STILLƏRİ ---- */
+
+/* Başlıq */
+header {
+    text-align: center;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Naviqasiya Düymələri */
+nav #region-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Kiçik ekranlarda düymələrin aşağı düşməsini təmin edir */
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.region-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--clr-primary-400);
+    background-color: var(--clr-neutral-100);
+    color: var(--clr-primary-400);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.region-btn:hover {
+    background-color: var(--clr-primary-500);
+    border-color: var(--clr-primary-500);
+    color: var(--clr-neutral-100);
+}
+
+/* Müasir əlçatanlıq (accessibility) üçün :focus-visible */
+.region-btn:focus-visible {
+    outline: 3px solid var(--clr-primary-400);
+    outline-offset: 3px;
+}
+
+.region-btn.active {
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+}
+
+/* Məzmun Bölmələri */
+main {
+    background: var(--clr-neutral-100);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.region-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.region-content.active {
+    display: block;
+}
+
+.region-content h2 {
+    color: var(--clr-neutral-900);
+    margin-top: 0;
+    border-bottom: 3px solid var(--clr-primary-400);
+    padding-bottom: var(--spacing-sm);
+}
+
+/* Şəkil Qalereyası (CSS Grid ilə) */
+.gallery {
+    display: grid;
+    /* Responsive sütunlar: minimum 200px, boş yer qalarsa böyüyür */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-block: var(--spacing-lg);
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Şəklin nisbətlərini qoruyaraq çərçivəni doldurur */
+    aspect-ratio: 4 / 3; /* Bütün şəkillərin eyni proporsiyada olmasını təmin edir */
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow);
+}
+
+/* Yükləmə Bölməsi */
+#upload-section {
+    background-color: var(--clr-neutral-100);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+#upload-form {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+#upload-form label {
+    font-weight: bold;
+}
+
+#upload-form select,
+#upload-form input,
+#upload-form button {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#upload-form button {
+    background-color: var(--clr-accent-400);
+    color: var(--clr-neutral-100);
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+#upload-form button:hover {
+    background-color: var(--clr-accent-500);
+}
+
+/* Footer (Səhifənin altlığı) */
+footer {
+    text-align: center;
+    color: #666;
+    margin-top: var(--spacing-xl);
+}
+
+
+/* ---- 3. ANİMASİYA VƏ RESPONSİV DİZAYN ---- */
+
+/* Fade-in animasiyası */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hərəkəti azaltmağı seçən istifadəçilər üçün animasiyaları ləğv edirik */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Kiçik ekranlar üçün (məsələn, 600px-dən kiçik) */
+@media (max-width: 600px) {
+    body {
+        padding: var(--spacing-md);
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        padding: var(--spacing-lg);
+    }
+
+    .gallery {
+        /* Mobil cihazlarda daha kiçik şəkillər üçün minimum ölçünü azaldırıq */
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: var(--spacing-sm);
+    }
+}

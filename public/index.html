@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Azerbaijan - Baku, Karabakh, Shaki & More</title>
+    <meta name="description" content="Discover the beautiful corners of Azerbaijan. Learn about Baku, Karabakh, Quba, Naftalan, and Sheki. View photos and read articles about each unique region.">
+    <meta name="keywords" content="Azerbaijan, Baku, Karabakh, Quba, Naftalan, Sheki, Travel, Tourism, Caucasus">
+    
+    <meta property="og:title" content="Explore the Corners of Azerbaijan">
+    <meta property="og:description" content="Discover the rich culture, stunning landscapes, and unique history of Azerbaijan's most fascinating regions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:3000"> <meta property="og:image" content="http://localhost:3000/uploads/og-image.jpg"> <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Explore the Azerways Turizm</h1>
+    </header>
+
+    <nav>
+        <div id="region-buttons" role="tablist" aria-label="Regions of Azerbaijan">
+            <button id="btn-baku" class="region-btn active" data-region="baku" role="tab" aria-controls="baku" aria-selected="true">Baku</button>
+            <button id="btn-karabakh" class="region-btn" data-region="karabakh" role="tab" aria-controls="karabakh" aria-selected="false">Karabakh</button>
+            <button id="btn-quba" class="region-btn" data-region="quba" role="tab" aria-controls="quba" aria-selected="false">Quba</button>
+            <button id="btn-naftalan" class="region-btn" data-region="naftalan" role="tab" aria-controls="naftalan" aria-selected="false">Naftalan</button>
+            <button id="btn-sheki" class="region-btn" data-region="sheki" role="tab" aria-controls="sheki" aria-selected="false">Sheki</button>
+        </div>
+    </nav>
+
+    <main id="content-container">
+        
+        <section id="baku" class="region-content active" role="tabpanel" aria-labelledby="btn-baku">
+            <h2>Baku - The City of Winds</h2>
+            <div class="gallery"></div>
+            <article class="article-content">
+                <p>Baku, the capital and commercial hub of Azerbaijan, is a low-lying city with coastline along the Caspian Sea. It's famed for its medieval walled old city, which contains the Palace of the Shirvanshahs, a vast royal complex, and the iconic stone Maiden Tower. Contemporary landmarks include the Zaha Hadid–designed Heydar Aliyev Center, and the Flame Towers, 3 pointed skyscrapers covered with LED screens.</p>
+            </article>
+        </section>
+
+        <section id="karabakh" class="region-content" role="tabpanel" aria-labelledby="btn-karabakh">
+            <h2>Karabakh - The Heart of Azerbaijan</h2>
+            <div class="gallery"></div>
+            <article class="article-content">
+                <p>Karabakh is a geographic region in southwestern Azerbaijan, extending from the highlands of the Lesser Caucasus down to the lowlands between the Kura and Aras rivers. It is a land of breathtaking mountains, lush valleys, and rich cultural heritage. The city of Shusha, known as the cultural capital of Azerbaijan, is located here, famous for its historical sites and musical traditions.</p>
+            </article>
+        </section>
+
+        <section id="quba" class="region-content" role="tabpanel" aria-labelledby="btn-quba">
+            <h2>Quba - The Apple Orchard</h2>
+            <div class="gallery"></div>
+            <article class="article-content">
+                <p>Quba is a city in and the capital of the Quba District of Azerbaijan. The city lies on the north-eastern slopes of Shahdag mountain, at an altitude of 600 m above sea level, on the right bank of the Gudial river. Quba is known for its semi-rural atmosphere, lush nature, and especially for its delicious apples. The nearby villages like Khinalig offer a glimpse into ancient Caucasian life and stunning mountain landscapes.</p>
+            </article>
+        </section>
+
+        <section id="naftalan" class="region-content" role="tabpanel" aria-labelledby="btn-naftalan">
+            <h2>Naftalan - The Healing Oil Resort</h2>
+            <div class="gallery"></div>
+            <article class="article-content">
+                <p>Naftalan is a unique health resort, world-famous for its healing crude oil. The Naftalan oil is a special type of oil used for therapeutic baths to treat more than 70 diseases, including musculoskeletal and skin conditions. Thousands of people visit Naftalan's sanatoriums every year to experience this one-of-a-kind natural treatment.</p>
+            </article>
+        </section>
+
+        <section id="sheki" class="region-content" role="tabpanel" aria-labelledby="btn-sheki">
+            <h2>Sheki - The Silk Road Gem</h2>
+            <div class="gallery"></div>
+            <article class="article-content">
+                <p>Sheki is one of Azerbaijan's most ancient and picturesque towns, nestled in the forested slopes of the Greater Caucasus Mountains. It was an important stop on the legendary Silk Road. The city is famous for the magnificent Palace of Shaki Khans, with its exquisite stained glass (shebeke) and detailed murals. Sheki is also known for its unique cuisine, particularly its sweet halva.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Azerways Turizm. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
